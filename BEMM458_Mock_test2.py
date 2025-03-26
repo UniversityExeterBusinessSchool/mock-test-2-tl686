@@ -117,7 +117,26 @@ print (df)
 
 # Price (£): 15, 18, 20, 22, 25, 27, 30
 # Demand (Units): 200, 180, 170, 160, 150, 140, 130
-
+#import library
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+#Data for Linear Regression
+price = np.array([15, 18, 20, 22, 25, 27, 30]).reshape(-1,1)
+demand = np.array([200, 180, 170, 160, 150, 140, 130])
+#Create model
+model = LinearRegression()
+model.fit (price, demand)
+#Predict demand at price £26
+predict_demand = model.predict([26])
+print ("The predict demand (units) if price at £26 is:",predict_demand)
+#Create scatter plot
+plt.scatter (price, demand, color = 'blue')
+plt.plot (price, model.predict(price), color = 'red')
+plt.xlable ("Price (£)")
+plt.ylable ("Demand (Units)")
+plt.title ("Price vs Demand")
+plt.show()
 #######################################################################################################################################################
 
 # Question 6 - Error Handling

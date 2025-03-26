@@ -149,13 +149,16 @@ prices = {'A': 50, 'B': 75, 'C': 'unknown', 'D': 30}
 # Write a function to calculate the total price of all items, handling any non-numeric values by skipping them.
 def calculate_total_prices (prices_dict):
     total_prices = 0
-    for items, prices in prices_dict.items():
+    for item, price in prices_dict.items():
         try:
-            total_prices += float(prices)
+            total_prices += float(price)
         except ValueError:
-            print (f"Skipping non-numeric value of item {items}")
-        return total_prices
-    print ("Total price is:",calculate_total_prices(prices))
+            print (f"Skipping non-numeric value of item {item}")
+    return total_prices
+print ("Total price is:",calculate_total_prices(prices))
+#Output:
+#Skipping non-numeric value of item C
+#Total price is: 155.0
 # Include error handling in your function and explain where and why it’s needed.
 
 #######################################################################################################################################################
@@ -164,25 +167,41 @@ def calculate_total_prices (prices_dict):
 # Generate 50 random numbers between 1 and 500, then:
 # Plot a histogram to visualize the distribution of these numbers.
 # Add appropriate labels for the x-axis and y-axis, and include a title for the histogram.
-
+#Import library
 import matplotlib.pyplot as plt
 import random
-
+#Generate 50 random numbers between 1 and 500
+random_numbers = [random.randint(1,500) for _ in range (50)]
+# Plot a histogram to visualize the distribution of these numbers.
+plt.hist (random_numbers, bins = 10, color = 'green', edgecolor = 'yellow')
+# Add appropriate labels for the x-axis and y-axis, and include a title for the histogram.
+plt.xlabel ('Value')
+plt.ylabel ('Frequency')
+plt.title ("Distribution of 50 random number between 1 and 500")
+plt.show()
 #######################################################################################################################################################
 
 # Question 8 - List Comprehensions
 # Given a list of integers representing order quantities.
 quantities = [5, 12, 9, 15, 7, 10]
-
 # Use a list comprehension to create a new list that doubles each quantity that is 10 or more.
+quantities_2 = [q*2 for q in quantities if q >= 10]
 # Print the original and the new lists.
-
+print ("The original list is:", quantities)
+print ("The new list is:", quantities_2)
+#Output
+#The original list is: [5, 12, 9, 15, 7, 10]
+#The new list is: [24, 30, 20]
 #######################################################################################################################################################
 
 # Question 9 - Dictionary Manipulation
 # Using the dictionary below, filter out the products with a rating of less than 4 and create a new dictionary with the remaining products.
 ratings = {'product_A': 4, 'product_B': 5, 'product_C': 3, 'product_D': 2, 'product_E': 5}
-
+#filter out the products with a rating of less than 4
+filter_ratings = {product:rating for product, rating in ratings.items() if rating >=4}
+#create a new dictionary
+print ("New dictionary:", filter_ratings)
+#Output: New dictionary: {'product_A': 4, 'product_B': 5, 'product_E': 5}
 #######################################################################################################################################################
 
 # Question 10 - Debugging and Correcting Code
@@ -195,6 +214,13 @@ average = total / len(values)
 print("The average is" + average)
 
 # Identify and correct the errors in the code.
+values = [10, 20, 30, 40, 50]
+total = 0
+for i in values:
+    total = total + i
+average = total / len(values)
+print("The average is", average) #syntax error
+#Output: The average is 30.0
 # Comment on each error and explain your fixes.
 
 #######################################################################################################################################################

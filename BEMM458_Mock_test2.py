@@ -51,7 +51,13 @@ customer_feedback = """The product was good but could be improved. I especially 
 
 # Find the first and last occurrence of the words 'good' and 'improved' in the feedback using string methods.
 # Store each position in a list as a tuple (start, end) for both words and print the list.
-
+customer_feedback = """The product was good but could be improved. I especially appreciated the customer support and fast response times."""
+start_1 = customer_feedback.find('good')
+end_1 = start_1 + len ('good')
+start_2 = customer_feedback.find('improved')
+end_2 = start_2 + len ('improved')
+position = [(start_1, end_1),(start_2, end_2)]
+print ("Position of the words 'good' and 'improved' in the customer feedback is:",position)
 
 #######################################################################################################################################################
 

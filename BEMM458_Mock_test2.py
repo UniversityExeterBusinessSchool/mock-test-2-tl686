@@ -94,6 +94,8 @@ import pandas as pd
 sales_data = {'Month': ['Jan', 'Feb', 'Mar', 'Apr', 'May'], 'Sales': [200, 220, 210, 240, 250]}
 df = pd.DataFrame(sales_data)
 print (df)
+df['Cumulative sales'] = df['Sales'].cumsum()
+print (df)
 #######################################################################################################################################################
 
 # Question 5 - Linear Regression for Forecasting

@@ -195,12 +195,18 @@ double_quantities = [q * 2 for q in quantities if q >=10]
 # Print the original and the new lists.
 print ("The original list:",quantities)
 print ("The new list:",double_quantities)
+#Out put: 
+        #The original list: [5, 12, 9, 15, 7, 10]
+        #The new list: [24, 30, 20]
 #######################################################################################################################################################
 
 # Question 9 - Dictionary Manipulation
 # Using the dictionary below, filter out the products with a rating of less than 4 and create a new dictionary with the remaining products.
 ratings = {'product_A': 4, 'product_B': 5, 'product_C': 3, 'product_D': 2, 'product_E': 5}
-
+# Filter out the products with a rating of less than 4
+filter_ratings = {product: rating for product, rating in ratings.items() if rating >=4}
+# Create a new dictionary with the remaining products
+print ("New dictionary:", filter_ratings)
 #######################################################################################################################################################
 
 # Question 10 - Debugging and Correcting Code

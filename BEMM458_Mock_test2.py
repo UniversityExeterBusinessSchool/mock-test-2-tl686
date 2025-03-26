@@ -153,13 +153,13 @@ prices = {'A': 50, 'B': 75, 'C': 'unknown', 'D': 30}
 prices = {'A': 50, 'B': 75, 'C': 'unknown', 'D': 30}
 def calculate_total_price (prices_dict):
     total_price = 0
-    for item, price in prices_dict.items():
+    for item, price in prices_dict.item():
         try:
             total_price += float(price)
         except ValueError:
             print (f"Skipping non-numberic price for item {item}")
     return total_price
-print ("Total price of all items:",calculate_total_price(price))
+print ("Total price of all items:",calculate_total_price(prices))
 
 #######################################################################################################################################################
 

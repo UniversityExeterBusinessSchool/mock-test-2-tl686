@@ -128,7 +128,7 @@ demand = np.array([200, 180, 170, 160, 150, 140, 130])
 model = LinearRegression()
 model.fit (price, demand)
 #Predict demand at price £26
-predict_demand = model.predict([26])
+predict_demand = model.predict([[26]])
 print ("The predict demand (units) if price at £26 is:",predict_demand)
 #Create scatter plot
 plt.scatter (price, demand, color = 'blue')

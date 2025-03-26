@@ -78,7 +78,7 @@ def ROI (net_gain_from_investment, investment_cost):
     return (net_gain_from_investment / investment_cost) * 100
 print ("Net Profit Margin:", NPM (7400,95180))
 print ("Customer Acquisition Cost:", CAC (7400,95180))
-print ("Net Promoter Score:", NPC (7400,95180))
+print ("Net Promoter Score:", NPC (7400,95180,740095180))
 print ("Return on Investment:", ROI (7400,95180))
 #######################################################################################################################################################
 

@@ -150,16 +150,20 @@ prices = {'A': 50, 'B': 75, 'C': 'unknown', 'D': 30}
 # Write a function to calculate the total price of all items, handling any non-numeric values by skipping them.
 # Include error handling in your function and explain where and why it’s needed.
 
+#Function to calculate total price of all items in prices dictionary, skip non-numeric values
 prices = {'A': 50, 'B': 75, 'C': 'unknown', 'D': 30}
 def calculate_total_price (prices_dict):
     total_price = 0
-    for item, price in prices_dict.item():
+    for item, price in prices_dict.items():
         try:
             total_price += float(price)
         except ValueError:
             print (f"Skipping non-numberic price for item {item}")
     return total_price
 print ("Total price of all items:",calculate_total_price(prices))
+#OUT PUT:
+#Skipping non-numberic price for item C
+#Total price of all items: 155.0
 
 #######################################################################################################################################################
 

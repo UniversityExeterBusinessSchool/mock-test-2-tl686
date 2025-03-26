@@ -133,8 +133,8 @@ print ("The predict demand (units) if price at £26 is:",predict_demand)
 #Create scatter plot
 plt.scatter (price, demand, color = 'blue')
 plt.plot (price, model.predict(price), color = 'red')
-plt.xlable ("Price (£)")
-plt.ylable ("Demand (Units)")
+plt.xlabel ("Price (£)")
+plt.ylabel ("Demand (Units)")
 plt.title ("Price vs Demand")
 plt.show()
 #######################################################################################################################################################

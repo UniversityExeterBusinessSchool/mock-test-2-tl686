@@ -1,10 +1,10 @@
 #######################################################################################################################################################
 # 
-# Name:
-# SID:
-# Exam Date:
-# Module:
-# Github link for this assignment:  
+# Name: Le, Thi Thu Huong
+# SID: 740095180
+# Exam Date: 28 Mar 2025
+# Module: Programming for Business Analytics
+# Github link for this assignment: https://github.com/UniversityExeterBusinessSchool/mock-test-2-tl686
 #
 #######################################################################################################################################################
 # Instruction 1. Read each question carefully and complete the scripts as instructed.
@@ -21,54 +21,141 @@
 # Question 1 - Loops and Lists
 # You are given a list of numbers representing weekly sales in units.
 weekly_sales = [120, 85, 100, 90, 110, 95, 130]
-
-# Write a for loop that iterates through the list and prints whether each week's sales were above or below the average sales for the period.
 # Calculate and print the average sales.
+average_sales = sum(weekly_sales) / len(weekly_sales)
+print ("The average sales is", average_sales)
+#Output: The average sales is 104.28571428571429
+# Write a for loop that iterates through the list and prints whether each week's sales were above or below the average sales for the period.
+for i in weekly_sales:
+    if i > average_sales:
+        print (f"Week's sales {i} was above the average sales")
+    elif i < average_sales:
+        print (f"Week's sales {i} was below the average sales")
+    else:
+        continue
+#Output:
+#Week's sales 120 was above the average sales
+#Week's sales 85 was below the average sales
+#Week's sales 100 was below the average sales
+#Week's sales 90 was below the average sales
+#Week's sales 110 was above the average sales
+#Week's sales 95 was below the average sales
+#Week's sales 130 was above the average sales
 
 #######################################################################################################################################################
 
 # Question 2 - String Manipulation
 # A customer feedback string is provided:
 customer_feedback = """The product was good but could be improved. I especially appreciated the customer support and fast response times."""
-
 # Find the first and last occurrence of the words 'good' and 'improved' in the feedback using string methods.
+start_1 = customer_feedback.find('good')
+end_1 = start_1 + len('good')
+start_2 = customer_feedback.find('improved')
+end_2 = start_2 + len('improved')
 # Store each position in a list as a tuple (start, end) for both words and print the list.
-
+position = ((start_1, end_1),(start_2, end_2))
+print ("Position of 'good' and 'improved' is:", position)
+#Output: Position of 'good' and 'improved' is: ((16, 20), (34, 42))
 #######################################################################################################################################################
 
 # Question 3 - Functions for Business Metrics
 # Define functions to calculate the following metrics, and call each function with sample values (use your student ID digits for customization).
-
 # 1. Net Profit Margin: Calculate as (Net Profit / Revenue) * 100.
 # 2. Customer Acquisition Cost (CAC): Calculate as (Total Marketing Cost / New Customers Acquired).
 # 3. Net Promoter Score (NPS): Calculate as (Promoters - Detractors) / Total Respondents * 100.
 # 4. Return on Investment (ROI): Calculate as (Net Gain from Investment / Investment Cost) * 100.
 
+# Define functions
+def NPM (net_profit,revenue):
+    return (net_profit / revenue) * 100
+def CAC (total_marketing_cost, new_customers_acquired):
+    return (total_marketing_cost / new_customers_acquired)
+def NPS (promoters, detractors, total_respondents):
+    return (promoters - detractors) / total_respondents * 100
+def ROI (net_gain_from_investment, investment_cost):
+    return (net_gain_from_investment / investment_cost) * 100
+#Call each function with sample values
+print ("Net Progit Margin is:", NPM (7400,740095180))
+print ("Customer Acquisition Cost is:", CAC (740095180,7400))
+print ("Net Promoter Score is:", NPS (7400,95180,740095180))
+print ("Return on Investment is:",ROI (740095,740095180))
+#Output:
+#Net Progit Margin is: 0.0009998713949197723
+#Customer Acquisition Cost is: 100012.86216216216
+#Net Promoter Score is: -0.011860636627845624
+#Return on Investment is: 0.0999999756788039
 #######################################################################################################################################################
 
 # Question 4 - Data Analysis with Pandas
 # Using a dictionary sales_data, create a DataFrame from this dictionary, and display the DataFrame.
 # Write code to calculate and print the cumulative monthly sales up to each month.
+#Import library
 import pandas as pd
-
+#Create and display the DataFrame from this dictionary
 sales_data = {'Month': ['Jan', 'Feb', 'Mar', 'Apr', 'May'], 'Sales': [200, 220, 210, 240, 250]}
-
+df = pd.DataFrame(sales_data)
+print(df)
+#Output
+#  Month  Sales
+#0   Jan    200
+#1   Feb    220
+#2   Mar    210
+#3   Apr    240
+#4   May    250
+#Calculate and print the cumulative monthly sales up to each month
+df['Cumulative sales'] = df['Sales'].cumsum()
+print(df)
+#Output
+#  Month  Sales  Cumulative sales
+#0   Jan    200               200
+#1   Feb    220               420
+#2   Mar    210               630
+#3   Apr    240               870
+#4   May    250              1120
 #######################################################################################################################################################
 
 # Question 5 - Linear Regression for Forecasting
 # Using the dataset below, create a linear regression model to predict the demand for given prices.
 # Predict the demand if the company sets the price at £26. Show a scatter plot of the data points and plot the regression line.
-
 # Price (£): 15, 18, 20, 22, 25, 27, 30
 # Demand (Units): 200, 180, 170, 160, 150, 140, 130
 
+#import library
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+#Dataset
+price = np.array([15, 18, 20, 22, 25, 27, 30]).reshape(-1,1)
+demand = np.array([200, 180, 170, 160, 150, 140, 130])
+#Create a linear regression model to predict the demand for given prices
+model = LinearRegression()
+model.fit (price, demand)
+#Predict the demand if the company sets the price at £26
+predict_demand = model.predict([[26]])
+print ("Predict the demand if the price at £26 is:",predict_demand)
+#Output: Predict the demand if the price at £26 is: [145.17241379]
+#Show a scatter plot of the data points and plot the regression line.
+plt.scatter (price, demand, color = 'green')
+plt.plot (price, model.predict(price), color = 'red')
+plt.xlabel ('Price (£)')
+plt.ylabel ('Demand (Units)')
+plt.title ('Price vs Demand')
+plt.show()
 #######################################################################################################################################################
 
 # Question 6 - Error Handling
 # You are given a dictionary of prices for different products.
 prices = {'A': 50, 'B': 75, 'C': 'unknown', 'D': 30}
-
 # Write a function to calculate the total price of all items, handling any non-numeric values by skipping them.
+def calculate_total_prices (prices_dict):
+    total_prices = 0
+    for items, prices in prices_dict.items():
+        try:
+            total_prices += float(prices)
+        except ValueError:
+            print (f"Skipping non-numeric value of item {items}")
+        return total_prices
+    print ("Total price is:",calculate_total_prices(prices))
 # Include error handling in your function and explain where and why it’s needed.
 
 #######################################################################################################################################################

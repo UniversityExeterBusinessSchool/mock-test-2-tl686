@@ -58,7 +58,7 @@ start_2 = customer_feedback.find('improved')
 end_2 = start_2 + len ('improved')
 position = [(start_1, end_1),(start_2, end_2)]
 print ("Position of the words 'good' and 'improved' in the customer feedback is:",position)
-
+#OUT PUT: Position of the words 'good' and 'improved' in the customer feedback is: [(16, 20), (34, 42)]
 #######################################################################################################################################################
 
 # Question 3 - Functions for Business Metrics
@@ -68,6 +68,18 @@ print ("Position of the words 'good' and 'improved' in the customer feedback is:
 # 2. Customer Acquisition Cost (CAC): Calculate as (Total Marketing Cost / New Customers Acquired).
 # 3. Net Promoter Score (NPS): Calculate as (Promoters - Detractors) / Total Respondents * 100.
 # 4. Return on Investment (ROI): Calculate as (Net Gain from Investment / Investment Cost) * 100.
+def NPM (net_profit, revenue):
+    return (net_profit / revenue) * 100
+net_profit = 740095180
+revenue = 740095180
+NPM = NPM (net_profit, revenue)
+print ("Net Profit Margin:", NPM)
+def CAC (total_marketing_cost, new_customers_acquired):
+    return (total_marketing_cost / new_customers_acquired)
+def NPC (promoters, detractors, total_respondents):
+    return (promoters - detractors) / total_respondents * 100
+def ROI (net_gain_from_investment, investment_cost):
+    return (net_gain_from_investment / investment_cost) * 100
 
 #######################################################################################################################################################
 

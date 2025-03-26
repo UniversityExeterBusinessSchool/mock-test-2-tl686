@@ -70,17 +70,16 @@ print ("Position of the words 'good' and 'improved' in the customer feedback is:
 # 4. Return on Investment (ROI): Calculate as (Net Gain from Investment / Investment Cost) * 100.
 def NPM (net_profit, revenue):
     return (net_profit / revenue) * 100
-net_profit = 740095180
-revenue = 740095180
-NPM = NPM (net_profit, revenue)
-print ("Net Profit Margin:", NPM)
 def CAC (total_marketing_cost, new_customers_acquired):
     return (total_marketing_cost / new_customers_acquired)
 def NPC (promoters, detractors, total_respondents):
     return (promoters - detractors) / total_respondents * 100
 def ROI (net_gain_from_investment, investment_cost):
     return (net_gain_from_investment / investment_cost) * 100
-
+print ("Net Profit Margin:", NPM (7400,95180))
+print ("Customer Acquisition Cost:", CAC (7400,95180))
+print ("Net Promoter Score:", NPC (7400,95180))
+print ("Return on Investment:", ROI (7400,95180))
 #######################################################################################################################################################
 
 # Question 4 - Data Analysis with Pandas

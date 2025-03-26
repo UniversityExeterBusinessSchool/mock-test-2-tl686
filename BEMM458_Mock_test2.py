@@ -207,18 +207,25 @@ ratings = {'product_A': 4, 'product_B': 5, 'product_C': 3, 'product_D': 2, 'prod
 filter_ratings = {product: rating for product, rating in ratings.items() if rating >=4}
 # Create a new dictionary with the remaining products
 print ("New dictionary:", filter_ratings)
+# Out put: New dictionary: {'product_A': 4, 'product_B': 5, 'product_E': 5}
 #######################################################################################################################################################
 
 # Question 10 - Debugging and Correcting Code
 # The following code intends to calculate the average of a list of numbers, but it contains errors:
-values = [10, 20, 30, 40, 50]
-total = 0
-for i in values:
-    total = total + i
-average = total / len(values)
+# values = [10, 20, 30, 40, 50]
+# total = 0
+# for i in values:
+#    total = total + i
+# average = total / len(values)
 #print("The average is" + average)
 
 # Identify and correct the errors in the code.
+values = [10, 20, 30, 40, 50]
+total = 0
+for i in values:
+   total = total + i
+average = total / len(values)
+print("The average is",average)
 # Comment on each error and explain your fixes.
 
 #######################################################################################################################################################

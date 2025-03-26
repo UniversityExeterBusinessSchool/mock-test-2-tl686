@@ -96,6 +96,19 @@ df = pd.DataFrame(sales_data)
 print (df)
 df['Cumulative sales'] = df['Sales'].cumsum()
 print (df)
+#OUT PUT:
+#  Month  Sales
+#0   Jan    200
+#1   Feb    220
+#2   Mar    210
+#3   Apr    240
+#4   May    250
+#  Month  Sales  Cumulative sales
+#0   Jan    200               200
+#1   Feb    220               420
+#2   Mar    210               630
+#3   Apr    240               870
+#4   May    250              1120
 #######################################################################################################################################################
 
 # Question 5 - Linear Regression for Forecasting

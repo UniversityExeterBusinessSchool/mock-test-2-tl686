@@ -190,10 +190,11 @@ plt.show()
 # Question 8 - List Comprehensions
 # Given a list of integers representing order quantities.
 quantities = [5, 12, 9, 15, 7, 10]
-
 # Use a list comprehension to create a new list that doubles each quantity that is 10 or more.
+double_quantities = [q * 2 for q in quantities if q >=10]
 # Print the original and the new lists.
-
+print ("The original list:",quantities)
+print ("The new list:",double_quantities)
 #######################################################################################################################################################
 
 # Question 9 - Dictionary Manipulation

@@ -80,6 +80,11 @@ print ("Net Profit Margin:", NPM (7400,95180))
 print ("Customer Acquisition Cost:", CAC (7400,95180))
 print ("Net Promoter Score:", NPC (7400,95180,740095180))
 print ("Return on Investment:", ROI (7400,95180))
+#OUT PUT:
+# Net Profit Margin: 7.774742592981719
+# Customer Acquisition Cost: 0.07774742592981719
+# Net Promoter Score: -0.011860636627845624
+# Return on Investment: 7.774742592981719
 #######################################################################################################################################################
 
 # Question 4 - Data Analysis with Pandas

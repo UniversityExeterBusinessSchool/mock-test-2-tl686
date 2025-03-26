@@ -172,9 +172,19 @@ print ("Total price of all items:",calculate_total_price(prices))
 # Plot a histogram to visualize the distribution of these numbers.
 # Add appropriate labels for the x-axis and y-axis, and include a title for the histogram.
 
+#Import library
 import matplotlib.pyplot as plt
 import random
-
+# Generate 50 random numbers between 1 and 500
+random_numbers = [random.randint(1,500) for _ in range(50)]
+print (random_numbers)
+# Plot a histogram to visualize the distribution of these numbers
+plt.hist (random_numbers, bins = 10, color = 'blue', edgecolor = 'black')
+# Add appropriate labels for the x-axis and y-axis, and include a title for the histogram
+plt.xlabel ("Value")
+plt.ylabel ("Frequency")
+plt.title ("Histogram of Random Numbers")
+plt.show()
 #######################################################################################################################################################
 
 # Question 8 - List Comprehensions

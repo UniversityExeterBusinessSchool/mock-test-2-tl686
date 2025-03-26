@@ -91,9 +91,9 @@ print ("Return on Investment:", ROI (7400,95180))
 # Using a dictionary sales_data, create a DataFrame from this dictionary, and display the DataFrame.
 # Write code to calculate and print the cumulative monthly sales up to each month.
 import pandas as pd
-
 sales_data = {'Month': ['Jan', 'Feb', 'Mar', 'Apr', 'May'], 'Sales': [200, 220, 210, 240, 250]}
-
+df = pd.DataFrame(sales_data)
+print (df)
 #######################################################################################################################################################
 
 # Question 5 - Linear Regression for Forecasting

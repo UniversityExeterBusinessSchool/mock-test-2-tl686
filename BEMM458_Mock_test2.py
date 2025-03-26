@@ -137,6 +137,10 @@ plt.xlabel ("Price (£)")
 plt.ylabel ("Demand (Units)")
 plt.title ("Price vs Demand")
 plt.show()
+#OUT PUT:
+#The predict demand (units) if price at £26 is: [145.17241379]
+#Scatter plot: 
+
 #######################################################################################################################################################
 
 # Question 6 - Error Handling
@@ -145,6 +149,16 @@ prices = {'A': 50, 'B': 75, 'C': 'unknown', 'D': 30}
 
 # Write a function to calculate the total price of all items, handling any non-numeric values by skipping them.
 # Include error handling in your function and explain where and why it’s needed.
+
+prices = {'A': 50, 'B': 75, 'C': 'unknown', 'D': 30}
+def total_price (prices_dict):
+    for item, price in prices_dict.items():
+        try:
+            total_price += float(price)
+        except ValueError:
+            print (f"Skipping non-numberic price for item {item}")
+    return total_price
+print ("Total price of all items:",total_price)
 
 #######################################################################################################################################################
 
